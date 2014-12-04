@@ -1,6 +1,6 @@
 # NSURLSession-PromiseKit
 
-[![CI Status](http://img.shields.io/travis/Jonas Schmid/NSURLSession-PromiseKit.svg?style=flat)](https://travis-ci.org/Jonas Schmid/NSURLSession-PromiseKit)
+[![CI Status](http://img.shields.io/travis/jschmid/NSURLSession-PromiseKit.svg?style=flat)](https://travis-ci.org/jschmid/NSURLSession-PromiseKit)
 [![Version](https://img.shields.io/cocoapods/v/NSURLSession-PromiseKit.svg?style=flat)](http://cocoadocs.org/docsets/NSURLSession-PromiseKit)
 [![License](https://img.shields.io/cocoapods/l/NSURLSession-PromiseKit.svg?style=flat)](http://cocoadocs.org/docsets/NSURLSession-PromiseKit)
 [![Platform](https://img.shields.io/cocoapods/p/NSURLSession-PromiseKit.svg?style=flat)](http://cocoadocs.org/docsets/NSURLSession-PromiseKit)
