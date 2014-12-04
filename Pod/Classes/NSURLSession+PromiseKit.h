@@ -12,8 +12,23 @@
 
 @interface NSURLSession (PromiseKit)
 
+/**
+   Creates an HTTP GET request promise for the specified URL.
+
+   @param url The `http` or `https` URL to be retrieved.
+   @return NSData *data, NSURLResponse *
+ */
 - (PMKPromise *)promiseDataTaskWithURL:(NSURL *)url;
+
+/**
+   Creates an HTTP request promise based on the specified URL request object.
+
+   @param request An object that provides request-specific information such as the URL, cache policy, request type, and body data or body stream.
+   @return NSData *data, NSURLResponse *
+ */
 - (PMKPromise *)promiseDataTaskWithRequest:(NSURLRequest *)request;
+
+
 - (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)url;
 - (PMKPromise *)promiseDownloadTaskWithRequest:(NSURLRequest *)request;
 - (PMKPromise *)promiseUploadTaskWithRequest:(NSURLRequest *)request fromData:(NSData *)bodyData;
