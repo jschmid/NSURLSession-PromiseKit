@@ -1,11 +1,3 @@
-//
-//  NSURLSession+PromiseKit.m
-//  salesamp
-//
-//  Created by Jonas Schmid on 04/12/14.
-//  Copyright (c) 2014 utribo SA. All rights reserved.
-//
-
 #import "NSURLSession+PromiseKit.h"
 
 @implementation NSURLSession (PromiseKit)

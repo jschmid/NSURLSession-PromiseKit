@@ -7,6 +7,27 @@
 
 ## Usage
 
+Import the category
+
+    #import "NSURLSession+PromiseKit.h"
+
+Create a `NSURLSession` like you are used to:
+
+	NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+	NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+
+Then use the category messages to get a `PMKPromise` instead of a `NSURLSessionTask`.
+
+    NSURL *url = [NSURL URLWithString:@"http://pastebin.com/raw.php?i=1gdNuVSh"];
+	[self.session promiseDataTaskWithURL:url].then( ^(NSData *data, NSURLResponse *response) {
+		NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		NSLog(@"Result: %@", result);
+	}).catch( ^(NSError *e) {
+		NSLog(@"Error: %@", e);
+	});
+
+### Example project
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
