@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#import "PromiseKit.h"
+@class PMKPromise;
 
 @interface NSURLSession (PromiseKit)
 
