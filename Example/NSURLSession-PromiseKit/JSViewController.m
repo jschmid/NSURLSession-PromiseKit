@@ -47,10 +47,7 @@
 }
 
 - (IBAction)downloadFileClick:(id)sender {
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = paths[0];
-	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"pastebinData.txt"];
-	NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+	NSURL *fileURL = [self localFileURL];
 
 	NSURL *originURL = [NSURL URLWithString:@"http://pastebin.com/raw.php?i=1gdNuVSh"];
 	[self.session promiseDownloadTaskWithURL:originURL toURL:fileURL].then( ^{
@@ -58,6 +55,29 @@
 	}).catch( ^(NSError *e) {
 		NSLog(@"Error: %@", e);
 	});
+}
+
+- (IBAction)uploadClick:(id)sender {
+	NSURL *URL = [NSURL URLWithString:@"http://httpbin.org/post"];
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
+	request.HTTPMethod = @"POST";
+
+	NSURL *fileURL = [self localFileURL];
+
+	[self.session promiseUploadTaskWithRequest:request fromFile:fileURL].then( ^(NSData *data, NSURLResponse *response) {
+		NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		NSLog(@"Result: %@", result);
+	}).catch( ^(NSError *e) {
+		NSLog(@"Error: %@", e);
+	});
+}
+
+- (NSURL *)localFileURL {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = paths[0];
+	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"pastebinData.txt"];
+	NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+	return fileURL;
 }
 
 @end
