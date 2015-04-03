@@ -1,4 +1,5 @@
 #import "NSURLSession+PromiseKit.h"
+#import <PromiseKit/PromiseKit.h>
 
 @implementation NSURLSession (PromiseKit)
 
