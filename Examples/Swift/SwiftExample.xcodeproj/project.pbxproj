@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7E1A366A5313639D5311F37 /* libPods-SwiftExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07666C5EB346C8E2D47FF841 /* libPods-SwiftExample.a */; };
+		3EE629B74A433872DE631C4C /* Pods_SwiftExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7F8E6444E6242B3175BC2E7 /* Pods_SwiftExample.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		DD31D2D31ACEA243002FD2D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31D2D21ACEA243002FD2D8 /* AppDelegate.swift */; };
 		DD31D2D51ACEA243002FD2D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31D2D41ACEA243002FD2D8 /* ViewController.swift */; };
 		DD31D2D81ACEA243002FD2D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD31D2D61ACEA243002FD2D8 /* Main.storyboard */; };
@@ -27,7 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07666C5EB346C8E2D47FF841 /* libPods-SwiftExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6AEE4E3E9AA8519A5BC0E54 /* Pods-SwiftExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftExample/Pods-SwiftExample.debug.xcconfig"; sourceTree = "<group>"; };
 		DD31D2CD1ACEA243002FD2D8 /* SwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD31D2D11ACEA243002FD2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		DD31D2E71ACEA243002FD2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD31D2E81ACEA243002FD2D8 /* SwiftExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExampleTests.swift; sourceTree = "<group>"; };
 		EA44D888F7BDCD5F2D524CF2 /* Pods-SwiftExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftExample/Pods-SwiftExample.release.xcconfig"; sourceTree = "<group>"; };
+		F7F8E6444E6242B3175BC2E7 /* Pods_SwiftExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7E1A366A5313639D5311F37 /* libPods-SwiftExample.a in Frameworks */,
+				3EE629B74A433872DE631C4C /* Pods_SwiftExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,7 +131,7 @@
 		FE1782C47A2DC85D84633DF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				07666C5EB346C8E2D47FF841 /* libPods-SwiftExample.a */,
+				F7F8E6444E6242B3175BC2E7 /* Pods_SwiftExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +148,7 @@
 				DD31D2CA1ACEA243002FD2D8 /* Frameworks */,
 				DD31D2CB1ACEA243002FD2D8 /* Resources */,
 				C2DFE61967643A27C405F681 /* Copy Pods Resources */,
+				FFDDCF469AD1C29EF3092F41 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +263,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftExample/Pods-SwiftExample-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFDDCF469AD1C29EF3092F41 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftExample/Pods-SwiftExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
