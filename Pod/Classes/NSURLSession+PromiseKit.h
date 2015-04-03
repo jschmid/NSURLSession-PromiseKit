@@ -23,18 +23,20 @@
 /**
    Creates a download task promise for the specified URL and saves the results to a file.
 
-   @param url An NSURL object that provides the URL to download.
-   @return NSURL *, NSURLResponse *
+   @param URL An NSURL object that provides the URL to download.
+   @param toURL The location where the file will be downloaded.
+   @return Nothing if the download was correct
  */
-- (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)url;
+- (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)URL toURL:(NSURL *)toURL;
 
 /**
    Creates a download task promise for the specified URL request and saves the results to a file.
 
    @param request An NSURLRequest object that provides the URL, cache policy, request type, body data or body stream, and so on.
-   @return NSURL *, NSURLResponse *
+   @param toUrl The location where the file will be downloaded.
+   @return Nothing if the download was correct
  */
-- (PMKPromise *)promiseDownloadTaskWithRequest:(NSURLRequest *)request;
+- (PMKPromise *)promiseDownloadTaskWithRequest:(NSURLRequest *)request toURL:(NSURL *)toURL;
 
 /**
    Creates an HTTP request promise for the specified URL request object and uploads the provided data object.
