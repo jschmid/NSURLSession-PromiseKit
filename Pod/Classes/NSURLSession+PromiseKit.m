@@ -32,7 +32,7 @@
 }
 
 - (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)URL toURL:(NSURL *)toURL {
-	return [PMKPromise new: ^(PMKFulfiller fulfill, PMKRejecter reject) {
+	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
 	    NSURLSessionTask *task = [self downloadTaskWithURL:URL completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
