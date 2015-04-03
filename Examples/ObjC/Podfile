@@ -1,11 +1,11 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'NSURLSession-PromiseKit', :exclusive => true do
-  pod "NSURLSession-PromiseKit", :path => "../"
+  pod "NSURLSession-PromiseKit", :path => "../../"
 end
 
 target 'Tests', :exclusive => true do
-  pod "NSURLSession-PromiseKit", :path => "../"
+  pod "NSURLSession-PromiseKit", :path => "../../"
 
   
 end
