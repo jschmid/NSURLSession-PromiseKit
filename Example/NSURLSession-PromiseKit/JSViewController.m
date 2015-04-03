@@ -26,7 +26,7 @@
 	self.session = [NSURLSession sessionWithConfiguration:configuration];
 }
 
-- (IBAction)downloadClick:(id)sender {
+- (IBAction)downloadDataClick:(id)sender {
 	NSURL *url = [NSURL URLWithString:@"http://pastebin.com/raw.php?i=1gdNuVSh"];
 	[self.session promiseDataTaskWithURL:url].then( ^(NSData *data, NSURLResponse *response) {
 		NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -41,6 +41,20 @@
 	[self.session promiseDataTaskWithURL:url].then( ^(NSData *data, NSURLResponse *response) {
 		NSString *result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 		NSLog(@"Result: %@", result);
+	}).catch( ^(NSError *e) {
+		NSLog(@"Error: %@", e);
+	});
+}
+
+- (IBAction)downloadFileClick:(id)sender {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = paths[0];
+	NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"pastebinData.txt"];
+	NSURL *fileURL = [NSURL fileURLWithPath:filePath];
+
+	NSURL *originURL = [NSURL URLWithString:@"http://pastebin.com/raw.php?i=1gdNuVSh"];
+	[self.session promiseDownloadTaskWithURL:originURL toURL:fileURL].then( ^{
+		NSLog(@"File downloaded to: %@", fileURL);
 	}).catch( ^(NSError *e) {
 		NSLog(@"Error: %@", e);
 	});
