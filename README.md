@@ -28,7 +28,11 @@ Then use the category messages to get a `PMKPromise` instead of a `NSURLSessionT
 
 ### Example project
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To try the example project, run:
+
+    pod try 'NSURLSession-PromiseKit'
+
+You can also clone the repo, run `pod install` from the Example directory, and open *NSURLSession-PromiseKit.xcworkspace*. 
 
 ## Requirements
 
@@ -37,7 +41,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 NSURLSession-PromiseKit is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "NSURLSession-PromiseKit"
+    pod 'NSURLSession-PromiseKit'
 
 ## Author
 
