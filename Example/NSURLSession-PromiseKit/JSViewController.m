@@ -8,6 +8,7 @@
 
 #import "JSViewController.h"
 
+#import <PromiseKit/PromiseKit.h>
 #import "NSURLSession+PromiseKit.h"
 
 @interface JSViewController ()
