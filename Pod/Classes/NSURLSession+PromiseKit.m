@@ -31,28 +31,32 @@
 	}];
 }
 
-- (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)url {
-	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self downloadTaskWithURL:url completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
+- (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)URL toURL:(NSURL *)toURL {
+	return [PMKPromise new: ^(PMKFulfiller fulfill, PMKRejecter reject) {
+	    NSURLSessionTask *task = [self downloadTaskWithURL:URL completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
 	        else {
-	            fulfill(PMKManifold(location, response));
+	            NSError *e = nil;
+	            [[NSFileManager defaultManager] moveItemAtURL:location toURL:toURL error:&e];
+	            fulfill(e);
 			}
 		}];
 	    [task resume];
 	}];
 }
 
-- (PMKPromise *)promiseDownloadTaskWithRequest:(NSURLRequest *)request {
+- (PMKPromise *)promiseDownloadTaskWithRequest:(NSURLRequest *)request toURL:(NSURL *)toURL {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
 	    NSURLSessionTask *task = [self downloadTaskWithRequest:request completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
 	        else {
-	            fulfill(PMKManifold(location, response));
+	            NSError *e = nil;
+	            [[NSFileManager defaultManager] moveItemAtURL:location toURL:toURL error:&e];
+	            fulfill(e);
 			}
 		}];
 	    [task resume];
