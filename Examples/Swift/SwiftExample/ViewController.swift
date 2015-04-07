@@ -12,10 +12,6 @@ import NSURLSession_PromiseKit
 
 class ViewController: UIViewController {
 
-
-//    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-//    self.session = [NSURLSession sessionWithConfiguration:configuration];
-
     var session: NSURLSession {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         return NSURLSession(configuration: configuration)
@@ -27,10 +23,7 @@ class ViewController: UIViewController {
 
     @IBAction func downloadDataClick(sender: UIButton) {
         let URL = NSURL(string: "http://pastebin.com/raw.php?i=1gdNuVSh")!
-        session.promiseDataTaskWithURL(URL).then() { data in
-            println("ok")
-            return nil
-        }
+        session.promiseDataTaskWithURL(URL).then()(nil)
     }
 }
 
