@@ -1,11 +1,11 @@
 #import "NSURLSession+PromiseKit.h"
 #import <PromiseKit/PromiseKit.h>
 
-@implementation NSURLSession (PromiseKit)
+@implementation NSObject (PromiseKit)
 
 - (PMKPromise *)promiseDataTaskWithURL:(NSURL *)url {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self dataTaskWithURL:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+	    NSURLSessionTask *task = [((NSURLSession *)self) dataTaskWithURL:url completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
@@ -19,7 +19,7 @@
 
 - (PMKPromise *)promiseDataTaskWithRequest:(NSURLRequest *)request {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+	    NSURLSessionTask *task = [((NSURLSession *)self) dataTaskWithRequest:request completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
@@ -33,7 +33,7 @@
 
 - (PMKPromise *)promiseDownloadTaskWithURL:(NSURL *)URL toURL:(NSURL *)toURL {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self downloadTaskWithURL:URL completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
+	    NSURLSessionTask *task = [((NSURLSession *)self) downloadTaskWithURL:URL completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
@@ -49,7 +49,7 @@
 
 - (PMKPromise *)promiseDownloadTaskWithRequest:(NSURLRequest *)request toURL:(NSURL *)toURL {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self downloadTaskWithRequest:request completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
+	    NSURLSessionTask *task = [((NSURLSession *)self) downloadTaskWithRequest:request completionHandler: ^(NSURL *location, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
@@ -65,7 +65,7 @@
 
 - (PMKPromise *)promiseUploadTaskWithRequest:(NSURLRequest *)request fromData:(NSData *)bodyData {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self uploadTaskWithRequest:request fromData:bodyData completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+	    NSURLSessionTask *task = [((NSURLSession *)self) uploadTaskWithRequest:request fromData:bodyData completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
@@ -79,7 +79,7 @@
 
 - (PMKPromise *)promiseUploadTaskWithRequest:(NSURLRequest *)request fromFile:(NSURL *)fileURL {
 	return [PMKPromise new: ^(PMKPromiseFulfiller fulfill, PMKPromiseRejecter reject) {
-	    NSURLSessionTask *task = [self uploadTaskWithRequest:request fromFile:fileURL completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
+	    NSURLSessionTask *task = [((NSURLSession *)self) uploadTaskWithRequest:request fromFile:fileURL completionHandler: ^(NSData *data, NSURLResponse *response, NSError *error) {
 	        if (error) {
 	            reject(error);
 			}
