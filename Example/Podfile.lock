@@ -1,0 +1,23 @@
+PODS:
+  - Nimble (2.0.0)
+  - NSURLSession-PromiseKit (3.0.0):
+    - PromiseKit/CorePromise (~> 3.0)
+  - PromiseKit/CorePromise (3.0.0)
+  - Quick (0.3.1)
+
+DEPENDENCIES:
+  - Nimble
+  - NSURLSession-PromiseKit (from `../`)
+  - Quick (~> 0.3.1)
+
+EXTERNAL SOURCES:
+  NSURLSession-PromiseKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Nimble: 472e75466819eb8c06299233e87c694a9b51328a
+  NSURLSession-PromiseKit: d90304f4e9a019a014b99bacc596c5d8b80c4afd
+  PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
+  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
+
+COCOAPODS: 0.39.0
