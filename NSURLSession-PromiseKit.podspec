@@ -1,7 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = "NSURLSession-PromiseKit"
-  s.version          = "0.3.1"
-  s.summary          = "Adds a category to NSURLSession to be able to use PromiseKit."
+  s.version          = "0.3.2"
+  s.summary          = "**DEPRECATED** Use PromiseKit directly with its extensions."
+  s.description      = "**DEPRECATED** Use PromiseKit directly with its [extensions](https://github.com/mxcl/PromiseKit/blob/master/Categories/Foundation/NSURLSession%2BPromise.swift)."
   s.homepage         = "https://github.com/jschmid/NSURLSession-PromiseKit"
   s.license          = 'MIT'
   s.author           = { "Jonas Schmid" => "jonas.schmid@gmail.com" }
@@ -15,4 +16,7 @@ Pod::Spec.new do |s|
 
   s.frameworks = 'Foundation'
   s.dependency 'PromiseKit/Promise', '~> 1.0'
+
+  s.deprecated = true
+  s.deprecated_in_favor_of = 'PromiseKit'
 end
